@@ -1,13 +1,16 @@
 let arr = [1, 2, 2, 3, 2, 4];
-let isExists = false;
-let value = 10;
-for (let val of arr) {
-  if (val == value) {
-    isExists = true;
-    break;
-  }
-}
 
-if (isExists) {
+function contains(T, value) {
+  let isExists = false;
+
+  for (let val of T) {
+    if (val == value) {
+      isExists = true;
+      return true;
+    }
+  }
+  return false;
+}
+if (contains(arr, 2)) {
   console.log("value found");
 } else console.log("value not found");
