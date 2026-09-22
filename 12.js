@@ -1,20 +1,10 @@
-let beforeRotate = [1, 2, 3, 4, 5];
-console.log("Before rotate ", beforeRotate);
-let afterRotate = [];
+let arr = [1, 2, 3, 4, 5];
 
-let temp;
+let temp = arr[0];
 
-let size = beforeRotate.length;
-
-for (let i = 0; i <= size - 1; i++) {
-  if (i == 0) {
-    temp = beforeRotate[i];
-    continue;
-  }
-
-  afterRotate.push(beforeRotate[i]);
+for (let i = 0; i < arr.length; i++) {
+  arr[i] = arr[i + 1];
 }
+arr[arr.length - 1] = temp;
 
-afterRotate.push(temp);
-
-console.log("after rotate", afterRotate);
+console.log(arr);
