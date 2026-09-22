@@ -1,18 +1,18 @@
-let arr = [-3, 5, -1, 8, 0];
-let range;
+let arr = [-3, -10, 5, -1, 8, 17, 0];
 
-let max, min;
-for (let i in arr) {
-  if (i == 0) {
-    max = arr[i];
-    min = arr[i];
+function Range(T) {
+  let max, min;
+
+  max = T[0];
+  min = T[0];
+
+  for (let i in T) {
+    if (T[i] > max) max = T[i];
+
+    if (T[i] < min) min = T[i];
   }
-
-  if (arr[i] > max) max = arr[i];
-
-  if (arr[i] < min) min = arr[i];
+  return max - min;
 }
 
-console.log("the min is", min);
-console.log("the max is", max);
-console.log("so the range is", max - min);
+//
+console.log("so the range is", Range(arr));
