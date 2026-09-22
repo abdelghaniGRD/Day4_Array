@@ -1,21 +1,25 @@
 let arr = [4, 10, 2, 9, 1];
 
-let sum = 0;
-let max = 0;
-let min;
+function stats(T) {
+  let sum = 0;
+  let max = 0;
+  let min;
 
-for (let i in arr) {
-  if (i == 0) min = arr[i];
+  for (let i in T) {
+    if (i == 0) min = T[i];
 
-  sum += arr[i];
+    sum += T[i];
 
-  if (arr[i] < min) min = arr[i];
+    if (T[i] < min) min = T[i];
 
-  if (arr[i] > max) max = arr[i];
+    if (T[i] > max) max = T[i];
+  }
+
+  let avrg = sum / T.length;
+  console.log("sum:", sum);
+  console.log("average:", avrg);
+  console.log("min:", min);
+  console.log("max:", max);
 }
 
-let avrg = sum / arr.length;
-console.log("sum:", sum);
-console.log("average:", avrg);
-console.log("min:", min);
-console.log("max:", max);
+stats(arr);
